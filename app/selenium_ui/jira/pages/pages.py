@@ -6,7 +6,8 @@ import json
 
 from selenium_ui.base_page import BasePage
 from selenium_ui.jira.pages.selectors import UrlManager, LoginPageLocators, DashboardLocators, PopupLocators, \
-    IssueLocators, ProjectLocators, SearchLocators, BoardsListLocators, BoardLocators, LogoutLocators
+    IssueLocators, ProjectLocators, SearchLocators, BoardsListLocators, BoardLocators, LogoutLocators, \
+    ReportLocators
 
 
 class PopupManager(BasePage):
@@ -74,6 +75,13 @@ class Dashboard(BasePage):
 
     def wait_dashboard_presented(self):
         self.wait_until_present(DashboardLocators.dashboard_window)
+
+
+class Report(BasePage):
+    page_url = ReportLocators.report_url
+
+    def wait_report_presented(self):
+        self.wait_until_present(ReportLocators.report_window)
 
 
 class Issue(BasePage):

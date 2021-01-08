@@ -26,6 +26,7 @@ class UrlManager:
         self.boards_list_params = '/secure/ManageRapidViews.jspa'
         self.scrum_board_backlog_params = f"/secure/RapidBoard.jspa?rapidView={board_id}&view=planning"
         self.scrum_board_params = f"/secure/RapidBoard.jspa?rapidView={board_id}"
+        self.report_page_params = f"/plugins/servlet/timereports"
 
     def login_url(self):
         return f"{self.host}{self.login_params}"
@@ -63,6 +64,8 @@ class UrlManager:
     def logout_url(self):
         return f"{self.host}{self.logout_params}"
 
+    def report_page_url(self):
+        return f"{self.host}{self.report_page_params}"
 
 class LoginPageLocators:
 
@@ -92,6 +95,13 @@ class DashboardLocators:
     dashboard_url = UrlManager().dashboard_url()
     dashboard_params = UrlManager().dashboard_params
     dashboard_window = (By.CLASS_NAME, "page-type-dashboard")
+
+
+class ReportLocators:
+
+    report_url = UrlManager().report_page_url()
+    reprot_params = UrlManager().report_page_params
+    report_window = (By.CLASS_NAME, "aui-page-hybrid")
 
 
 class IssueLocators:

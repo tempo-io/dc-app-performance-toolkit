@@ -3,7 +3,7 @@ import urllib.parse
 
 from selenium_ui.conftest import print_timing
 from selenium_ui.jira.pages.pages import Login, PopupManager, Issue, Project, Search, ProjectsList, \
-    BoardsList, Board, Dashboard, Logout
+    BoardsList, Board, Dashboard, Report, Logout
 
 from util.api.jira_clients import JiraRestClient
 from util.conf import JIRA_SETTINGS
@@ -228,6 +228,15 @@ def view_dashboard(webdriver, datasets):
     def measure():
         dashboard_page.go_to()
         dashboard_page.wait_dashboard_presented()
+    measure()
+
+def view_report(webdriver, datasets):
+    report_page = Report(webdriver)
+
+    @print_timing("selenium_view_report")
+    def measure():
+        report_page.go_to()
+        report_page.wait_report_presented()
     measure()
 
 
