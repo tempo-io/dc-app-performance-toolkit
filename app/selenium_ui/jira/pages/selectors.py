@@ -26,7 +26,7 @@ class UrlManager:
         self.boards_list_params = '/secure/ManageRapidViews.jspa'
         self.scrum_board_backlog_params = f"/secure/RapidBoard.jspa?rapidView={board_id}&view=planning"
         self.scrum_board_params = f"/secure/RapidBoard.jspa?rapidView={board_id}"
-        self.report_page_params = f"/plugins/servlet/timereports"
+        self.report_page_params = f"/secure/TimesheetReport.jspa?reportKey=jira-timesheet-plugin:report"
 
     def login_url(self):
         return f"{self.host}{self.login_params}"
