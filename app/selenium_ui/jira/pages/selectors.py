@@ -101,7 +101,7 @@ class ReportLocators:
 
     report_url = UrlManager().report_page_url()
     reprot_params = UrlManager().report_page_params
-    report_window = (By.CLASS_NAME, "aui-page-hybrid")
+    report_window = (By.CLASS_NAME, "page-type-report")
 
 
 class IssueLocators:
